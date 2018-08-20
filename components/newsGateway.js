@@ -1,8 +1,9 @@
 var rp = require('request-promise');
 
+
  function getNewsByCountry(country){
     var options = {
-        uri: 'https://newsapi.org/v2/top-headlines?country='+country+'&apiKey=c5ee7c4373bf4859aa7644972d62c5a9',
+        uri: 'https://newsapi.org/v2/top-headlines?country='+country+'&apiKey=' +  process.env.news_apikey,
         headers: {
             'User-Agent': 'request-promise'
         },
@@ -17,7 +18,7 @@ var rp = require('request-promise');
 
 function getNewsByType(searchQuery){
     var options = {
-        uri: 'https://newsapi.org/v2/top-headlines?q='+searchQuery+'&apiKey=c5ee7c4373bf4859aa7644972d62c5a9',
+        uri: 'https://newsapi.org/v2/top-headlines?q='+searchQuery+'&apiKey='+  process.env.news_apikey,
         headers: {
             'User-Agent': 'request-promise'
         },

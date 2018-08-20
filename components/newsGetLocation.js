@@ -3,7 +3,7 @@ var rp = require('request-promise');
 module.exports = function getLocation(searchQuery){
     var options = {
         
-        uri: 'https://maps.googleapis.com/maps/api/geocode/json?address='+searchQuery+'&key=AIzaSyCZ_mrf-jRwayDXDOyAHm6FgCO7rt3W8Q8',
+        uri: 'https://maps.googleapis.com/maps/api/geocode/json?address='+searchQuery+'&key=' + process.env.google_geocode_apikey,
         headers: {
             'User-Agent': 'request-promise'
         },
